@@ -1,0 +1,1305 @@
+/*&:after {
+  content: "";
+  display: table;
+  clear: both;}*/
+body {
+  font-family: "Neutral Web", sans-serif;
+  scroll-behavior: smooth;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  min-width: 320px;
+  position: relative;
+  background: #F5F5F5;
+  max-width: 3000px;
+  margin: auto;
+  color: #141414; }
+
+header, section, footer {
+  margin: auto; }
+
+a {
+  text-decoration: none; }
+  a:focus {
+    outline: none !important; }
+
+a:hover, a:focus, a:active {
+  text-decoration: none; }
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+a, button {
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease; }
+
+figure {
+  margin: 0; }
+  figure img {
+    width: auto;
+    max-width: 100%;
+    vertical-align: top; }
+
+ul {
+  margin: 0;
+  padding: 0; }
+  ul li {
+    list-style-type: none; }
+
+p, a {
+  color: #141414;
+  margin: 0; }
+
+input {
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important; }
+
+.content-width {
+  width: 1275px;
+  margin: auto; }
+
+h1, h2 {
+  margin: 0 0 30px; }
+
+h3 {
+  margin: 0 0 30px; }
+
+h4 {
+  margin: 0 0 30px; }
+
+h5 {
+  margin: 0 0 10px; }
+
+h6 {
+  margin: 0 0 10px; }
+
+input:invalid {
+  -webkit-box-shadow: none;
+          box-shadow: none; }
+
+input, textarea, button {
+  outline: none !important; }
+
+/*-------------------------------HOME-PAGE---------------------------------*/
+header {
+  position: relative;
+  z-index: 9999;
+  background: #5A293F; }
+
+.top-line {
+  padding: 29px 0;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease; }
+  .top-line .content-width {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .top-line .logo-wrap {
+    width: 125px;
+    position: relative;
+    top: 2px; }
+    .top-line .logo-wrap img {
+      max-width: 100%; }
+  .top-line .top-menu {
+    width: calc(100% - 485px);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0 7px 0 0; }
+    .top-line .top-menu ul {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      position: relative;
+      top: 2px; }
+      .top-line .top-menu ul li {
+        margin-right: 46px; }
+        .top-line .top-menu ul li a {
+          color: #FFF;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 400;
+          line-height: 105%;
+          text-transform: capitalize;
+          display: inline-block;
+          position: relative; }
+          .top-line .top-menu ul li a:after {
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 100%;
+            content: '';
+            height: 1px;
+            background: #fff;
+            -webkit-transition: all .4s ease;
+            transition: all .4s ease;
+            -webkit-transform: scaleX(0);
+                    transform: scaleX(0); }
+          .top-line .top-menu ul li a:hover:after {
+            -webkit-transform: scaleX(1);
+                    transform: scaleX(1); }
+      .top-line .top-menu ul .current_page_item a:after {
+        -webkit-transform: scaleX(1);
+                transform: scaleX(1); }
+      .top-line .top-menu ul li:last-child {
+        margin-right: 0; }
+    .top-line .top-menu .search-btn {
+      width: 32px;
+      height: 32px; }
+      .top-line .top-menu .search-btn a {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        width: 100%;
+        height: 100%;
+        position: relative; }
+        .top-line .top-menu .search-btn a:after {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 40px;
+          height: 40px;
+          content: '';
+          -webkit-transform: translate(-50%, -50%);
+                  transform: translate(-50%, -50%); }
+        .top-line .top-menu .search-btn a img {
+          width: 100%; }
+        .top-line .top-menu .search-btn a:hover {
+          opacity: 0.7; }
+
+.search-form-wrap {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  max-height: 0;
+  background: #5A293F;
+  -webkit-transition: all .4s ease;
+  transition: all .4s ease; }
+  .search-form-wrap .content-width {
+    padding: 20px 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between; }
+  .search-form-wrap .form-search {
+    width: calc(100% - 100px);
+    position: relative; }
+    .search-form-wrap .form-search input {
+      width: 100%;
+      padding: 0 70px 0 0;
+      border: none;
+      height: 40px;
+      line-height: 60px;
+      border-bottom: 1px solid #fff;
+      font-size: 18px;
+      color: #fff;
+      background: transparent; }
+    .search-form-wrap .form-search input::-webkit-input-placeholder {
+      color: #fff; }
+    .search-form-wrap .form-search input::-moz-placeholder {
+      color: #fff; }
+    .search-form-wrap .form-search input:-ms-input-placeholder {
+      color: #fff; }
+    .search-form-wrap .form-search input:-moz-placeholder {
+      color: #fff; }
+    .search-form-wrap .form-search button {
+      width: 30px;
+      height: 40px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      background: transparent !important;
+      border: none;
+      cursor: pointer;
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1; }
+      .search-form-wrap .form-search button:hover {
+        opacity: 0.7; }
+  .search-form-wrap .close-search {
+    width: 40px;
+    height: 40px; }
+    .search-form-wrap .close-search a {
+      width: 100%;
+      height: 100%;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      padding: 5px; }
+      .search-form-wrap .close-search a img {
+        width: 100%;
+        -webkit-transition: all .4s ease;
+        transition: all .4s ease;
+        -webkit-transform: rotate(0);
+                transform: rotate(0); }
+      .search-form-wrap .close-search a:hover img {
+        -webkit-transform: rotate(360deg);
+                transform: rotate(360deg); }
+
+.search-form-wrap.is-active {
+  max-height: 100px; }
+
+.bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: hidden; }
+
+.home-banner {
+  position: relative; }
+  .home-banner .bg:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background: #000;
+    opacity: 0.3;
+    z-index: 2; }
+  .home-banner .bg img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center; }
+  .home-banner .bg video {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: relative;
+    -o-object-position: center;
+       object-position: center;
+    z-index: 1; }
+  .home-banner .bg.bg-img video {
+    display: none; }
+  .home-banner .content-width {
+    height: 565px;
+    padding: 50px 0 100px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+        -ms-flex-align: end;
+            align-items: flex-end;
+    position: relative;
+    z-index: 4; }
+  .home-banner h1 {
+    font-size: 45px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: -0.45px;
+    text-transform: capitalize;
+    font-family: "FAM Aime TRIAL", sans-serif;
+    color: #fff;
+    margin: 0; }
+
+.slider-4n-block {
+  padding: 87px 0 79px; }
+  .slider-4n-block .content-width {
+    position: relative; }
+  .slider-4n-block h2 {
+    margin-bottom: 41px; }
+
+.nav-wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 135px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse; }
+  .nav-wrap > div {
+    width: 50px;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+    position: relative;
+    top: 2px;
+    right: 3px;
+    margin: 0;
+    -webkit-transform: none;
+            transform: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    height: 20px; }
+    .nav-wrap > div img {
+      width: 100%; }
+    .nav-wrap > div:after {
+      display: none; }
+    .nav-wrap > div:hover {
+      opacity: 0.7; }
+
+h2 {
+  color: #141414;
+  font-family: "FAM Aime TRIAL", sans-serif;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 105%;
+  text-transform: capitalize; }
+
+.slider-4n .swiper-slide {
+  position: relative;
+  height: auto; }
+  .slider-4n .swiper-slide .text {
+    padding-bottom: 50px; }
+  .slider-4n .swiper-slide .btn-wrap {
+    position: absolute;
+    left: 0;
+    bottom: 0; }
+  .slider-4n .swiper-slide figure {
+    width: 100%;
+    height: 185px;
+    overflow: hidden;
+    margin-bottom: 26px; }
+    .slider-4n .swiper-slide figure img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+      -webkit-transition: all .4s ease;
+      transition: all .4s ease;
+      -webkit-transform-origin: center;
+              transform-origin: center; }
+    .slider-4n .swiper-slide figure:hover img {
+      -webkit-transform: scale(1.03);
+              transform: scale(1.03); }
+  .slider-4n .swiper-slide p {
+    color: #141414;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: 0; }
+  .slider-4n .swiper-slide .h6 {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 12px; }
+    .slider-4n .swiper-slide .h6 a:hover {
+      opacity: 0.7; }
+
+.btn-color {
+  pointer-events: none;
+  display: inline-block;
+  border-radius: 4px;
+  border: 1px solid #5A293F;
+  background: rgba(90, 41, 63, 0.2);
+  text-align: center;
+  height: 26px;
+  line-height: 24px;
+  color: var(5A293F, #5A293F);
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  padding: 0 10px; }
+
+.btn-color.blue {
+  border: 1px solid #02578E;
+  background: rgba(2, 87, 142, 0.2);
+  color: #02578E; }
+
+.btn-color.orange {
+  border: 1px solid #DB8A3F;
+  background: rgba(219, 138, 63, 0.3);
+  color: #C77A33; }
+
+.btn-color.green {
+  border: 1px solid #449F6A;
+  background: rgba(68, 159, 106, 0.2);
+  color: #449F6A; }
+
+.follow .content-width {
+  background: #5A293F;
+  padding: 31px 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+.follow .title {
+  color: #FFF;
+  font-family: "FAM Aime TRIAL", sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 105%;
+  margin: 0 57px 0 0; }
+
+.soc {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .soc li {
+    margin-right: 50px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+    .soc li a {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      color: #FFF;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      letter-spacing: 0.36px;
+      text-transform: uppercase; }
+      .soc li a i {
+        margin-right: 12px;
+        font-size: 18px; }
+      .soc li a span {
+        position: relative;
+        top: 2px; }
+      .soc li a:hover {
+        opacity: 0.7; }
+  .soc li:last-child {
+    margin-right: 0; }
+
+.block-2n {
+  padding: 88px 0 102px; }
+  .block-2n .content-width {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .block-2n .item {
+    width: 48%; }
+  .block-2n h2 {
+    margin-bottom: 47px; }
+  .block-2n .iframe-wrap {
+    margin-bottom: 43px; }
+    .block-2n .iframe-wrap > img {
+      max-width: 100%; }
+  .block-2n .text p {
+    padding-right: 10%;
+    margin-bottom: 25px; }
+
+.btn-default {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid  #5A293F;
+  padding: 0 29px;
+  color: #5A293F;
+  text-align: center;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: -0.075px;
+  background: transparent;
+  height: 52px;
+  line-height: 50px; }
+  .btn-default:hover {
+    background: #5A293F;
+    color: #fff; }
+
+.line {
+  width: 100%; }
+  .line .content-width {
+    height: 1px;
+    background: #343434; }
+
+.slider-4-5n-block {
+  padding-bottom: 96px; }
+  .slider-4-5n-block h2 {
+    margin-bottom: 72px; }
+
+.slider-4-5n {
+  margin-bottom: 42px; }
+  .slider-4-5n .swiper-slide {
+    width: 213px; }
+    .slider-4-5n .swiper-slide figure {
+      width: 100%;
+      height: 327px;
+      overflow: hidden;
+      margin-bottom: 31px; }
+      .slider-4-5n .swiper-slide figure img {
+        width: 100%;
+        height: 100%;
+        -o-object-fit: cover;
+           object-fit: cover;
+        -webkit-transition: all .4s ease;
+        transition: all .4s ease; }
+      .slider-4-5n .swiper-slide figure:hover img {
+        -webkit-transform: scale(1.03);
+                transform: scale(1.03); }
+    .slider-4-5n .swiper-slide .text p {
+      color: #141414;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; }
+    .slider-4-5n .swiper-slide .text p.h6 {
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: capitalize;
+      margin-bottom: 13px; }
+      .slider-4-5n .swiper-slide .text p.h6 a:hover {
+        opacity: 0.7; }
+
+.instagram-slider-block {
+  padding-bottom: 107px; }
+  .instagram-slider-block h2 {
+    margin-bottom: 57px; }
+  .instagram-slider-block .swiper-slide figure {
+    height: 267px; }
+  .instagram-slider-block .slider-4n .swiper-slide p {
+    font-size: 12px; }
+    .instagram-slider-block .slider-4n .swiper-slide p a {
+      text-decoration: underline; }
+      .instagram-slider-block .slider-4n .swiper-slide p a:hover {
+        opacity: 0.7; }
+  .instagram-slider-block .btn-wrap {
+    margin-top: 10px; }
+
+footer {
+  padding: 93px 0 125px; }
+  footer .content-width {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  footer .logo-wrap {
+    width: 125px; }
+    footer .logo-wrap img {
+      max-width: 100%; }
+  footer .right {
+    width: calc(100% - 394px);
+    padding-top: 10px; }
+
+.footer-menu {
+  margin-bottom: 33px; }
+  .footer-menu ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .footer-menu ul li {
+      margin-right: 31px; }
+      .footer-menu ul li a {
+        color: #343434;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 105%;
+        text-transform: capitalize; }
+        .footer-menu ul li a:hover {
+          opacity: 0.7; }
+    .footer-menu ul li:last-child {
+      margin-right: 0; }
+
+.soc-list-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .soc-list-btn li {
+    margin-right: 30px; }
+    .soc-list-btn li a {
+      border-radius: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content;
+      padding: 0 15px;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      color: #343434;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      letter-spacing: 0.36px;
+      text-transform: uppercase;
+      height: 42px;
+      line-height: 40px; }
+      .soc-list-btn li a i {
+        font-size: 16px;
+        margin-right: 13px; }
+      .soc-list-btn li a:hover {
+        background: #343434;
+        border-color: #343434;
+        color: #fff; }
+  .soc-list-btn li:last-child {
+    margin-right: 0; }
+
+.open-menu {
+  display: none; }
+
+/*------------------------------END-HOME-PAGE---------------------------------*/
+/*-------------------------------PAGE-PODCAST--------------------------------*/
+.block-2n:first-child {
+  padding-top: 115px; }
+
+.follow-50 {
+  padding-bottom: 173px; }
+  .follow-50 .item-follow {
+    padding-top: 78px; }
+    .follow-50 .item-follow .wrap {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column;
+      background: #5A293F;
+      height: 100%;
+      padding: 20px; }
+      .follow-50 .item-follow .wrap .title {
+        color: #FFF;
+        font-family: "FAM Aime TRIAL", sans-serif;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 105%;
+        margin: 0 0 35px 0;
+        text-align: center; }
+  .follow-50 .text p {
+    padding: 0; }
+
+.bg-white {
+  background: #fff;
+  padding: 109px 0 119px; }
+
+.line:last-child {
+  margin-bottom: -15px; }
+
+/*------------------------------END-PAGE-PODCAST--------------------------------*/
+/*-------------------------------PAGE-PODCAST-LEADING-------------------------------*/
+.bg-white:first-child {
+  padding-top: 38px;
+  padding-bottom: 109px; }
+
+.breadcrumb {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin-bottom: 30px; }
+  .breadcrumb li {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    color: #141414;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    /* 21px */
+    text-transform: capitalize; }
+    .breadcrumb li span {
+      display: inline-block;
+      margin: 0 10px; }
+    .breadcrumb li a {
+      color: #5A293F;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; }
+      .breadcrumb li a:hover {
+        opacity: 0.7; }
+
+.title-img-text {
+  padding: 33px 0 0; }
+  .title-img-text .content-width {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .title-img-text .title-wrap {
+    width: 31%; }
+  .title-img-text h1 {
+    color: #141414;
+    font-family: "FAM Aime TRIAL", sans-serif;
+    font-size: 32.762px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 105%;
+    text-transform: capitalize;
+    margin: 0; }
+  .title-img-text figure {
+    width: 310px;
+    padding-top: 5px; }
+    .title-img-text figure img {
+      width: 100%;
+      height: auto; }
+  .title-img-text .text {
+    width: calc(69% - 310px);
+    padding-left: 5.4%;
+    padding-top: 3px; }
+  .title-img-text p {
+    margin-bottom: 12px; }
+  .title-img-text .btn-wrap {
+    margin-top: 29px; }
+
+.btn-black {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid #5A293F;
+  background: #5A293F;
+  height: 52px;
+  line-height: 50px;
+  color: var(--ffffff, #FFF);
+  text-align: center;
+  padding: 0 20px 0 20px;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0.36px; }
+  .btn-black:hover {
+    background: #000;
+    border-color: #000; }
+
+.btn-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding-left: 15px; }
+  .btn-img img {
+    margin-right: 15px;
+    position: relative;
+    top: -2px; }
+
+.episode {
+  padding: 113px 0 160px; }
+  .episode .content-width {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .episode .title-wrap {
+    width: 30%; }
+  .episode .content {
+    width: 69%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding-top: 3px; }
+    .episode .content .item {
+      width: calc(50% - 22px);
+      margin-bottom: 42px; }
+      .episode .content .item > img {
+        width: 100%;
+        height: auto; }
+
+.h3 {
+  color: #343434;
+  font-family: "FAM Aime TRIAL", sans-serif;
+  font-size: 27px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150.5%;
+  text-transform: capitalize; }
+
+.pagination-wrap {
+  margin-top: 63px;
+  width: 100%; }
+
+.pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .pagination li {
+    margin: 0 3px;
+    width: 28px;
+    height: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    border-radius: 4px;
+    border: 1px solid #5A293F;
+    color: #5A293F;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    /* 18px */
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
+    padding-top: 2px; }
+    .pagination li a {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      color: #5A293F;
+      text-align: center;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      /* 18px */
+      letter-spacing: 0.36px;
+      text-transform: uppercase;
+      border-radius: 0;
+      width: 30px;
+      height: 27px;
+      margin-top: -1px;
+      margin-left: -2px;
+      position: relative;
+      z-index: 2;
+      background: #F5F5F5;
+      max-width: inherit;
+      min-width: 30px; }
+      .pagination li a:hover {
+        color: #000; }
+        .pagination li a:hover img {
+          opacity: 0.7; }
+      .pagination li a img {
+        position: relative;
+        -webkit-transition: all .4s ease;
+        transition: all .4s ease; }
+  .pagination .arrow {
+    border: none;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content; }
+    .pagination .arrow a {
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content; }
+  .pagination .arrow-left {
+    margin-right: 35px; }
+  .pagination .arrow-right {
+    margin-left: 35px; }
+
+.follow + .bg-white {
+  margin-top: 90px; }
+
+/*------------------------------END-PAGE-PODCAST-LEADING-------------------------------*/
+/*-----------------------------PAGE-PODCAST-FEATURED-------------------------------*/
+.title-img-buy {
+  padding: 66px 0 0; }
+  .title-img-buy .content-width {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .title-img-buy h2 {
+    font-size: 33px; }
+  .title-img-buy .title-wrap {
+    width: 31%; }
+  .title-img-buy h1 {
+    color: #343434;
+    font-family: "FAM Aime TRIAL", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    /* 50px */
+    letter-spacing: -0.6px;
+    text-transform: capitalize;
+    margin-bottom: 20px; }
+  .title-img-buy figure {
+    width: 215px;
+    padding-top: 5px; }
+    .title-img-buy figure img {
+      width: 100%;
+      height: auto; }
+  .title-img-buy .text {
+    width: calc(69% - 215px);
+    padding-left: 5.4%;
+    padding-top: 23px; }
+  .title-img-buy p {
+    margin-bottom: 12px; }
+  .title-img-buy .btn-wrap {
+    margin-top: 35px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    .title-img-buy .btn-wrap a + a {
+      margin-left: 30px; }
+
+.label {
+  color: #5A293F;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 150%;
+  /* 18px */
+  letter-spacing: 0.36px;
+  text-transform: uppercase;
+  margin-bottom: 17px; }
+
+.shop-tabs {
+  padding: 95px 0 100px; }
+  .shop-tabs .tabs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .shop-tabs .tab-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .shop-tabs .tabs-menu {
+    width: 200px; }
+    .shop-tabs .tabs-menu li {
+      margin-bottom: 1px;
+      cursor: pointer;
+      color: #B1B1B1;
+      font-family: "FAM Aime TRIAL", sans-serif;
+      font-size: 27px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150.5%;
+      text-transform: capitalize; }
+    .shop-tabs .tabs-menu .is-active {
+      color: #5A293F; }
+  .shop-tabs .tab-content {
+    width: calc(100% - 395px);
+    padding-top: 12px; }
+    .shop-tabs .tab-content .item {
+      width: calc(33.33% - 80px);
+      margin-right: 107px;
+      margin-bottom: 100px; }
+      .shop-tabs .tab-content .item figure {
+        width: 100%;
+        height: 327px;
+        overflow: hidden;
+        margin-bottom: 30px; }
+        .shop-tabs .tab-content .item figure img {
+          width: 100%;
+          height: 100%;
+          -o-object-fit: cover;
+             object-fit: cover;
+          -o-object-position: center;
+             object-position: center;
+          -webkit-transition: all .4s ease;
+          transition: all .4s ease; }
+        .shop-tabs .tab-content .item figure:hover img {
+          -webkit-transform: scale(1.03);
+                  transform: scale(1.03); }
+      .shop-tabs .tab-content .item p {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        margin-bottom: 20px; }
+      .shop-tabs .tab-content .item p.h6 {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        margin-bottom: 15px; }
+    .shop-tabs .tab-content .item:nth-child(3n) {
+      margin-right: 0; }
+  .shop-tabs .pagination-wrap {
+    margin-top: -10px; }
+
+.author {
+  padding: 26px 0 87px; }
+  .author .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 50px 60px;
+    background: #5A293F; }
+  .author figure {
+    width: 245px; }
+    .author figure img {
+      width: 100%;
+      border-radius: 100%;
+      opacity: 0.7; }
+  .author .text {
+    width: calc(100% - 335px); }
+    .author .text p {
+      color: #FFF;
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      margin-bottom: 27px;
+      padding-right: 20%; }
+
+.btn-white {
+  border-color: #fff;
+  color: #fff;
+  background: transparent; }
+  .btn-white:hover {
+    background: #fff;
+    color: #5A293F; }
+
+/*----------------------------END-PAGE-PODCAST-FEATURED-------------------------------*/
+/*-----------------------------PAGE-PODCAST-INNER-------------------------------*/
+.info-text {
+  padding: 61px 0 0; }
+  .info-text .content {
+    padding-left: 175px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .info-text .img-wrap {
+    width: 278px; }
+    .info-text .img-wrap figure {
+      margin-bottom: 45px; }
+      .info-text .img-wrap figure img {
+        width: 100%;
+        height: auto; }
+    .info-text .img-wrap ul li {
+      margin-bottom: 12px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap; }
+      .info-text .img-wrap ul li p:first-child {
+        margin-right: 5px; }
+      .info-text .img-wrap ul li p {
+        display: inline-block;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; }
+      .info-text .img-wrap ul li a {
+        display: inline-block;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; }
+        .info-text .img-wrap ul li a:hover {
+          opacity: 0.7; }
+  .info-text .text {
+    width: calc(100% - 385px);
+    position: relative;
+    top: -3px; }
+    .info-text .text h6 {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      margin-bottom: 40px; }
+    .info-text .text p {
+      margin-bottom: 12px; }
+  .info-text h1 {
+    color: #343434;
+    font-family: "FAM Aime TRIAL", sans-serif;
+    font-size: 49px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    /* 61.25px */
+    letter-spacing: -0.735px;
+    text-transform: capitalize;
+    margin-bottom: 20px; }
+  .info-text .btn-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 40px 0 40px;
+    border-top: 1px solid #343434;
+    border-bottom: 1px solid #343434;
+    margin-bottom: 45px; }
+    .info-text .btn-wrap a {
+      margin-right: 22px; }
+  .info-text .nice-select {
+    min-width: 276px; }
+  .info-text blockquote {
+    margin: 45px 0 30px;
+    padding-top: 43px;
+    border-top: 1px solid #343434;
+    color: #343434;
+    font-family: "FAM Aime TRIAL", sans-serif;
+    font-size: 21px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 147.5%; }
+  .info-text .name {
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    margin: 0; }
+  .info-text .wrap {
+    max-width: 555px; }
+
+.nice-select {
+  float: inherit;
+  border-radius: 4px;
+  border: 1px solid #5A293F !important;
+  height: 52px;
+  line-height: 50px; }
+  .nice-select:after {
+    border-bottom: 2px solid #5A293F;
+    border-right: 2px solid #5A293F;
+    width: 8px;
+    height: 8px;
+    margin-top: -7px; }
+
+.nice-select .list {
+  width: 100%;
+  border: 1px solid #5A293F !important; }
+
+/*----------------------------END-PAGE-PODCAST-INNER-------------------------------*/
+
+/*# sourceMappingURL=styles.css.map */
