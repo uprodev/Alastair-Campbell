@@ -552,7 +552,7 @@
       width: -moz-fit-content;
       width: fit-content; }
 
-  .shop-tabs .tabs-menu li {
+  .shop-tabs .tabs-menu li a, .shop-tabs .tabs-menu li {
     font-size: 20px; }
 
   .shop-tabs {

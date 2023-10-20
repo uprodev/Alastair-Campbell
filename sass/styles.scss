@@ -1131,9 +1131,24 @@ footer{
       font-weight: 400;
       line-height: 150.5%;
       text-transform: capitalize;
+      a{
+        color: #B1B1B1;
+        font-family: $font2;
+        font-size: 27px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150.5%;
+        text-transform: capitalize;
+        &:hover{
+          color: #5A293F;
+        }
+      }
     }
     .is-active{
       color: #5A293F;
+      a{
+        color: #5A293F;
+      }
     }
   }
   .tab-content{
