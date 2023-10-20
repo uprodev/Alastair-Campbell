@@ -145,4 +145,33 @@ jQuery(document).ready(function ($) {
   //select
   $('select').niceSelect();
 
+  //progress bar
+
+  if($('.default-page .aside').length > 0){
+    var winHeight = $(window).height(),
+      docHeight = $('.default-page .content').height(),
+      progressBar = $('.progress span'),
+      topBlock = $('.default-page .content').offset().top,
+      max, value, readText;
+
+
+    /* Set the max scrollable area */
+    max = docHeight - winHeight + topBlock;
+
+
+    $(document).on('scroll', function(){
+      readText = $(window).scrollTop();
+      value = (readText/max)*100
+      progressBar.css("width", value + "%");
+
+    });
+
+  }
+
+
+
+  //fix block
+  $('.default-page .aside').fixTo('.default-page .content', {
+    top: 50
+  });
 });

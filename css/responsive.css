@@ -58,7 +58,60 @@
     margin-top: 20px; }
 
   .info-text .content {
-    padding: 0; } }
+    padding: 0; }
+
+  .blog-banner .right {
+    width: calc(100% - 250px); }
+
+  .blog-banner figure {
+    width: 100%; }
+
+  .blog-banner .text {
+    padding: 35px 35px;
+    margin-left: 70px;
+    margin-top: -45px; }
+
+  .blog-tabs .item-blog .text-event .date-block {
+    width: 65px;
+    height: 70px; }
+
+  .blog-tabs .item-blog .text-event .wrap-text {
+    width: calc(100% - 80px); }
+
+  .blog-tabs .item-blog .text .wrap {
+    padding: 20px 20px 10px; }
+
+  .default-page .aside {
+    width: 300px; }
+
+  .default-page h1 {
+    font-size: 36px; }
+
+  .default-page .main {
+    width: calc(100% - 350px); }
+
+  .default-page .aside .item a figure {
+    width: 70px;
+    height: 65px; }
+
+  .default-page .aside .item a .text {
+    width: calc(100% - 85px); }
+
+  .default-page .wrap p {
+    font-size: 16px; }
+
+  .default-page .wrap blockquote {
+    margin: 20px 15px 20px;
+    font-size: 18px; }
+
+  .default-page ol li {
+    font-size: 16px; }
+
+  .default-page ul li {
+    font-size: 16px; }
+
+  .default-page ul li:before {
+    top: 9px; } }
 @media (max-width: 991px) {
   .content-width {
     width: 720px; }
@@ -205,7 +258,27 @@
     width: 200px; }
 
   .info-text .text {
-    width: calc(100% - 250px); } }
+    width: calc(100% - 250px); }
+
+  .blog-banner .right {
+    width: 100%;
+    margin-top: 30px; }
+
+  .blog-banner .title {
+    width: 100%; }
+
+  .blog-tabs .tab-content {
+    width: 100%;
+    margin-top: 20px; }
+
+  .blog-tabs .item-blog figure {
+    height: 220px; }
+
+  .default-page .aside {
+    display: none; }
+
+  .default-page .main {
+    width: 100%; } }
 @media (max-width: 767px) {
   .content-width {
     width: 540px; }
@@ -320,7 +393,50 @@
             justify-content: center; }
 
   .info-text h1 {
-    font-size: 34px; } }
+    font-size: 34px; }
+
+  .shop-tabs .tabs-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .shop-tabs .tabs-menu li {
+      margin: 0 5px; }
+
+  .blog-tabs .item-blog {
+    width: calc(50% - 10px);
+    margin-bottom: 20px; }
+
+  .blog-tabs .item-blog .text-event .wrap-text {
+    width: 100%;
+    margin-top: 15px; }
+
+  .blog-tabs .item-blog .text .bottom {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
+    .blog-tabs .item-blog .text .bottom p:first-child {
+      margin-bottom: 10px;
+      width: 100%;
+      text-align: center; }
+
+  .blog-tabs .item-blog figure {
+    height: 180px; }
+
+  .blog-tabs .item-blog .text-event .wrap {
+    display: block; }
+
+  .blog-tabs .item-blog .text-event .date-block {
+    float: left;
+    margin: 0 15px 5px 0; }
+
+  .blog-tabs .item-blog .text-event .wrap-text {
+    margin: 0; }
+
+  .blog-tabs .item-blog .text .wrap {
+    min-height: 235px; } }
 @media (max-width: 575px) {
   .content-width {
     width: 100%;
@@ -413,6 +529,70 @@
       width: 100%; }
 
   .info-text .nice-select {
-    width: 100%; } }
+    width: 100%; }
+
+  .blog-banner {
+    padding: 20px 0 0; }
+
+  .blog-banner figure {
+    height: 50vw; }
+
+  .blog-banner .text {
+    margin: 0;
+    padding: 15px; }
+
+  .blog-banner h1 {
+    font-size: 30px; }
+
+  .blog-banner ul li:first-child {
+    width: 100%;
+    margin-bottom: 10px; }
+    .blog-banner ul li:first-child p {
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content; }
+
+  .shop-tabs .tabs-menu li {
+    font-size: 20px; }
+
+  .shop-tabs {
+    padding: 70px 0; }
+
+  .blog-tabs .item-blog {
+    width: 100%; }
+
+  .blog-tabs .item-blog .text .wrap {
+    min-height: inherit; }
+
+  .author .content {
+    padding: 30px; }
+
+  .blog-banner h2 {
+    font-size: 22px;
+    margin-bottom: 5px; }
+
+  .default-page h6 {
+    font-size: 18px;
+    margin: 20px 0 20px; }
+  .default-page h5 {
+    font-size: 19px;
+    margin: 20px 0 20px; }
+  .default-page h4 {
+    font-size: 20px;
+    margin: 20px 0 20px; }
+  .default-page h3 {
+    font-size: 22px;
+    margin: 20px 0 20px; }
+
+  .default-page h1 {
+    font-size: 30px; }
+
+  .default-page .info li:first-child {
+    width: 100%;
+    margin: 0 0 5px; }
+    .default-page .info li:first-child p {
+      width: -webkit-fit-content;
+      width: -moz-fit-content;
+      width: fit-content; } }
 
 /*# sourceMappingURL=responsive.css.map */

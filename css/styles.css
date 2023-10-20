@@ -944,7 +944,6 @@ footer {
         -ms-flex-align: center;
             align-items: center;
     border-radius: 4px;
-    border: 1px solid #5A293F;
     color: #5A293F;
     text-align: center;
     font-size: 12px;
@@ -953,9 +952,33 @@ footer {
     line-height: 150%;
     /* 18px */
     letter-spacing: 0.36px;
-    text-transform: uppercase;
-    padding-top: 2px; }
+    text-transform: uppercase; }
+    .pagination li p {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      border-radius: 4px;
+      width: 28px;
+      height: 25px;
+      border: 1px solid #5A293F;
+      padding-top: 2px;
+      color: #5A293F;
+      text-align: center;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      /* 18px */
+      letter-spacing: 0.36px;
+      text-transform: uppercase; }
     .pagination li a {
+      padding-top: 2px;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -1301,5 +1324,493 @@ footer {
   border: 1px solid #5A293F !important; }
 
 /*----------------------------END-PAGE-PODCAST-INNER-------------------------------*/
+/*-----------------------------PAGE-BLOG-------------------------------*/
+.blog-banner {
+  padding: 75px 0 0;
+  margin-bottom: -57px; }
+  .blog-banner .content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .blog-banner .title {
+    width: 200px; }
+  .blog-banner .right {
+    width: calc(100% - 395px);
+    padding-top: 5px; }
+  .blog-banner figure {
+    width: 770px;
+    height: 345px;
+    overflow: hidden; }
+    .blog-banner figure img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+      -webkit-transition: all .4s ease;
+      transition: all .4s ease; }
+    .blog-banner figure:hover img {
+      -webkit-transform: scale(1.02);
+              transform: scale(1.02); }
+  .blog-banner .text {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    padding: 53px 53px;
+    margin-left: 170px;
+    margin-top: -55px; }
+  .blog-banner h1 {
+    color: #343434;
+    font-family: "FAM Aime TRIAL", sans-serif;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    letter-spacing: -0.6px;
+    margin-bottom: 35px; }
+    .blog-banner h1 a:hover {
+      opacity: 0.7; }
+  .blog-banner ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-top: 10px; }
+    .blog-banner ul li {
+      margin-right: 30px; }
+      .blog-banner ul li p {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%; }
+      .blog-banner ul li p.date {
+        color: #5A293F;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        letter-spacing: 0.3px;
+        text-transform: uppercase; }
+      .blog-banner ul li p.tag {
+        border-radius: 4px;
+        border: 1px solid #5A293F;
+        color: #5A293F;
+        text-align: center;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        padding: 0 10px; }
+  .blog-banner h2 {
+    font-size: 33px; }
+
+.blog-tabs .tab-item {
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+.blog-tabs .item-blog {
+  width: calc(50% - 25px);
+  margin-bottom: 60px; }
+  .blog-tabs .item-blog figure {
+    width: 100%;
+    height: 180px;
+    overflow: hidden;
+    position: relative; }
+    .blog-tabs .item-blog figure .icon {
+      position: absolute;
+      bottom: 20px;
+      left: 35px;
+      z-index: 3; }
+    .blog-tabs .item-blog figure a > img {
+      width: 100%;
+      height: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+      -o-object-position: center;
+         object-position: center;
+      -webkit-transition: all .4s ease;
+      transition: all .4s ease; }
+    .blog-tabs .item-blog figure:hover a > img {
+      -webkit-transform: scale(1.03);
+              transform: scale(1.03); }
+  .blog-tabs .item-blog .text {
+    background: #fff; }
+    .blog-tabs .item-blog .text .h6 {
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      margin-bottom: 14px; }
+      .blog-tabs .item-blog .text .h6 a:hover {
+        opacity: 0.7; }
+    .blog-tabs .item-blog .text .date {
+      color: #5A293F;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      letter-spacing: 0.3px;
+      text-transform: uppercase; }
+    .blog-tabs .item-blog .text .wrap {
+      min-height: 215px;
+      padding: 30px 30px 10px; }
+    .blog-tabs .item-blog .text .bottom {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      padding: 13px 18px;
+      border-top: 1px solid #F5F5F5; }
+      .blog-tabs .item-blog .text .bottom p.info {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        opacity: 0.4; }
+      .blog-tabs .item-blog .text .bottom p.tag {
+        border-radius: 4px;
+        border: 1px solid #5A293F;
+        color: #5A293F;
+        text-align: center;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        padding: 0 10px; }
+  .blog-tabs .item-blog .text-event .wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+  .blog-tabs .item-blog .text-event .date-block {
+    background: #F5F5F5;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 83px;
+    height: 81px; }
+    .blog-tabs .item-blog .text-event .date-block p {
+      color: #5A293F;
+      text-align: center;
+      font-size: 10px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: normal;
+      letter-spacing: -0.05px;
+      text-transform: uppercase; }
+    .blog-tabs .item-blog .text-event .date-block .big {
+      color: #5A293F;
+      text-align: center;
+      font-size: 35px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%;
+      margin-bottom: -4px; }
+  .blog-tabs .item-blog .text-event .wrap-text {
+    width: calc(100% - 110px); }
+    .blog-tabs .item-blog .text-event .wrap-text p {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 150%; }
+    .blog-tabs .item-blog .text-event .wrap-text .h6 {
+      font-size: 15px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      margin-bottom: 10px; }
+      .blog-tabs .item-blog .text-event .wrap-text .h6 a:hover {
+        opacity: 0.7; }
+.blog-tabs .pagination-wrap {
+  margin-top: 25px; }
+
+/*----------------------------END-PAGE-BLOG-------------------------------*/
+/*-----------------------------PAGE-POST-------------------------------*/
+.default-page {
+  padding: 12px 0 0; }
+  .default-page h1 {
+    color: #343434;
+    font-family: "FAM Aime TRIAL", sans-serif;
+    font-size: 49px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    /* 61.25px */
+    letter-spacing: -0.735px;
+    margin-bottom: 35px; }
+  .default-page .info {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    margin-bottom: 45px; }
+    .default-page .info li {
+      margin-right: 30px;
+      padding: 0 !important; }
+      .default-page .info li:before {
+        display: none; }
+      .default-page .info li p.author-p {
+        font-size: 12px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 150%;
+        opacity: 0.4; }
+      .default-page .info li p.tag {
+        border-radius: 4px;
+        border: 1px solid #5A293F;
+        color: #5A293F;
+        text-align: center;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: 0.3px;
+        text-transform: uppercase;
+        padding: 0 10px; }
+      .default-page .info li p.date {
+        color: #5A293F;
+        font-size: 10px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 150%;
+        /* 15px */
+        letter-spacing: 0.3px;
+        text-transform: uppercase; }
+    .default-page .info li:last-child {
+      margin-right: 0; }
+  .default-page .wrap figure {
+    width: 100%;
+    margin-bottom: 53px; }
+    .default-page .wrap figure img {
+      width: 100%;
+      height: auto; }
+  .default-page .wrap p {
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 160%;
+    margin-bottom: 12px; }
+    .default-page .wrap p a {
+      text-decoration: underline; }
+      .default-page .wrap p a:hover {
+        opacity: 0.7; }
+  .default-page .wrap blockquote {
+    margin: 37px 50px 37px;
+    color: #343434;
+    font-family: "FAM Aime TRIAL", sans-serif;
+    font-size: 23px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 147.5%; }
+  .default-page .wrap .line-small {
+    display: block;
+    width: 92px;
+    margin: 46px 0 48px;
+    background: #343434;
+    height: 1px; }
+  .default-page .main {
+    display: inline-block;
+    width: calc(100% - 478px); }
+  .default-page .aside {
+    width: 392px;
+    display: inline-block;
+    float: right;
+    margin-top: 5px; }
+    .default-page .aside .h6 {
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 500;
+      line-height: 150%;
+      margin-bottom: 25px; }
+    .default-page .aside .item {
+      margin-bottom: 38px;
+      width: 100%; }
+      .default-page .aside .item a {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; }
+        .default-page .aside .item a figure {
+          width: 82px;
+          height: 70px;
+          overflow: hidden; }
+          .default-page .aside .item a figure img {
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+               object-fit: cover;
+            -o-object-position: center;
+               object-position: center;
+            -webkit-transition: all .4s ease;
+            transition: all .4s ease; }
+        .default-page .aside .item a .text {
+          width: calc(100% - 110px);
+          position: relative;
+          top: -1px; }
+          .default-page .aside .item a .text p {
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 150%;
+            margin-bottom: 8px; }
+          .default-page .aside .item a .text p.date {
+            color: #5A293F;
+            font-size: 10px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: 150%;
+            /* 15px */
+            letter-spacing: 0.3px;
+            text-transform: uppercase;
+            margin: 0; }
+        .default-page .aside .item a:hover figure img {
+          -webkit-transform: scale(1.03);
+                  transform: scale(1.03); }
+    .default-page .aside .progress-wrap {
+      border-radius: 4px;
+      background: #F5F5F5;
+      padding: 35px 30px 40px;
+      margin-bottom: 46px; }
+      .default-page .aside .progress-wrap .icon {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        margin-bottom: 25px; }
+        .default-page .aside .progress-wrap .icon img {
+          margin-right: 10px;
+          position: relative;
+          top: -2px; }
+        .default-page .aside .progress-wrap .icon p {
+          color: #5A293F;
+          text-align: center;
+          font-size: 10px;
+          font-style: normal;
+          font-weight: 500;
+          line-height: 150%;
+          /* 15px */
+          letter-spacing: 0.3px;
+          text-transform: uppercase; }
+    .default-page .aside .progress {
+      width: 100%;
+      height: 8px;
+      border-radius: 999px;
+      background: #FFF;
+      position: relative;
+      overflow: hidden; }
+      .default-page .aside .progress span {
+        display: inline-block;
+        background: #5A293F;
+        height: 8px;
+        position: absolute;
+        top: 0;
+        left: 0; }
+  .default-page h6 {
+    font-size: 21px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 177.5%;
+    margin: 33px 0 20px; }
+  .default-page h5 {
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 177.5%;
+    margin: 33px 0 20px; }
+  .default-page h4 {
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 177.5%;
+    margin: 33px 0 20px; }
+  .default-page h3 {
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 177.5%;
+    margin: 33px 0 20px; }
+  .default-page h2 {
+    margin-top: 33px; }
+  .default-page ul {
+    margin: 30px 0 30px; }
+    .default-page ul li {
+      padding-left: 20px;
+      position: relative;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      margin-bottom: 5px; }
+      .default-page ul li a {
+        text-decoration: underline; }
+        .default-page ul li a:hover {
+          opacity: 0.7; }
+      .default-page ul li:before {
+        width: 4px;
+        height: 4px;
+        position: absolute;
+        top: 11px;
+        left: 0;
+        content: '';
+        border-radius: 100%;
+        background: #141414; }
+  .default-page ol {
+    margin: 30px 0 30px; }
+    .default-page ol li {
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 160%;
+      margin-bottom: 12px; }
+      .default-page ol li a {
+        text-decoration: underline; }
+        .default-page ol li a:hover {
+          opacity: 0.7; }
+
+/*----------------------------END-PAGE-POST-------------------------------*/
 
 /*# sourceMappingURL=styles.css.map */
