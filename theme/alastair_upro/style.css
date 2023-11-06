@@ -1,0 +1,52 @@
+/*   
+Theme Name: Alastair Campbell
+*/
+.author figure img{
+	height: auto;
+}
+ul.page-numbers {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+ul.page-numbers a.next,
+ul.page-numbers a.prev
+ {
+    border: none;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+ul.page-numbers a.next {
+    margin-left: 35px;
+}
+ul.page-numbers a.prev {
+    margin-right: 35px;
+}
+.pagination li span.current {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    border-radius: 4px;
+    width: 28px;
+    height: 25px;
+    border: 1px solid #5A293F;
+    padding-top: 2px;
+    color: #5A293F;
+    text-align: center;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0.36px;
+    text-transform: uppercase;
+}
