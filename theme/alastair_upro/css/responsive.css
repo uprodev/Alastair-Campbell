@@ -634,6 +634,10 @@
     padding-right: 15px;
   }
 
+  .comment-form{
+    width: 100%;
+  }
+
   .default-page h1 {
     font-size: 30px; }
 

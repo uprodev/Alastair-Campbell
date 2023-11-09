@@ -145,4 +145,21 @@ jQuery(document).ready(function ($) {
   $('.default-page .aside').fixTo('.default-page .content', {
     top: 50
   });
+
+  var swiperImg = new Swiper(".slider-img", {
+    spaceBetween: 10,
+    effect: "fade",
+    autoplay: {
+      delay: 30000000,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".img-next",
+      prevEl: ".img-prev",
+    },
+    pagination: {
+      el: ".img-pagination",
+      clickable: true,
+    },
+  });
 });

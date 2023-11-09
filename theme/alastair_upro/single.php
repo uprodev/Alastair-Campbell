@@ -43,7 +43,6 @@
 
 					</div>
 				</div>
-
 				<?php $terms = wp_get_object_terms(get_the_ID(), 'category', 'fields=ids') ?>
 
 				<div class="aside">
@@ -90,10 +89,13 @@
 
 				</div>
 			</div>
+			
+			<?php comments_template() ?>
+
 		</div>
 	</section>
 </div>
 
-<?php get_template_part('parts/all', 'posts', ['page_id' => 10852]) ?>
+<?php get_template_part('parts/all', 'posts', ['is_single' => true]) ?>
 
 <?php get_footer(); ?>

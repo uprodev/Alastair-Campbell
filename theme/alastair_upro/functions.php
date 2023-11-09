@@ -21,13 +21,15 @@ function load_style_script(){
 	wp_enqueue_script('my-nice-select', get_template_directory_uri() . '/js/jquery.nice-select.min.js', array(), false, true);
 	wp_enqueue_script('my-fixto', get_template_directory_uri() . '/js/fixto.js', array(), false, true);
 	wp_enqueue_script('my-script', get_template_directory_uri() . '/js/script.js', array(), false, true);
+	if(is_single()) wp_enqueue_script('comment-reply');
 }
 
 
 add_action('after_setup_theme', function(){
 	register_nav_menus( array(
 		'header' => 'Header menu',
-		'footer' => 'Footer menu'
+		'footer' => 'Footer menu',
+		'sidebar' => 'Sidebar menu'
 	) );
 });
 
@@ -83,17 +85,51 @@ function reading_time() {
 
 
 function get_first_paragraph(){
-    global $post;
-    $str = wpautop( get_the_content() );
-    $str = substr( $str, 0, strpos( $str, '</p>' ) + 4 );
-    $str = strip_tags($str, '<a><strong><em>');
-    return '<p>' . $str . '</p>';
+	global $post;
+	$str = wpautop( get_the_content() );
+	$str = substr( $str, 0, strpos( $str, '</p>' ) + 4 );
+	$str = strip_tags($str, '<a><strong><em>');
+	return '<p>' . $str . '</p>';
 }
 
 add_action('init', function(){
-    if ($_GET['test']) {
-        print_r(get_metadata('post',11052 ));
+	if ($_GET['test']) {
+		print_r(get_metadata('post',11052 ));
 
-        die();
-    }
+		die();
+	}
 });
+
+
+add_action( 'widgets_init', 'register_my_widgets' );
+function register_my_widgets(){
+	register_sidebar( array(
+		'name' => 'Sidebar',
+		'id' => 'my-sidebar',
+		'description' => 'Sidebar',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '',
+		'after_title' => '',
+	) );
+}
+
+
+include_once(get_stylesheet_directory() . '/inc/widget_links.php');
+
+
+add_action('acf/init', 'my_acf_init_block_types');
+function my_acf_init_block_types() {
+
+    if( function_exists('acf_register_block_type') ) {
+
+        acf_register_block_type(array(
+            'name'              => 'my_slider',
+            'title'             => __('Slider (Custom)'),
+            'description'       => __('Add Slider (Custom)'),
+            'render_template'   => 'parts/blocks/slider.php',
+            'category'          => 'common',
+            'post_types'        => array('post', 'page'),
+        ));
+    }
+}

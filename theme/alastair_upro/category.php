@@ -66,6 +66,7 @@
 	<section class="shop-tabs blog-tabs">
 		<div class="content-width">
 			<div class="tabs">
+
 				<ul class="tabs-menu">
 					<li><a href="<?php the_permalink($page_id) ?>"><?php _e('All', 'Campbell') ?></a></li>
 
