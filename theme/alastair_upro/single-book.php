@@ -51,7 +51,7 @@
 						<div class="btn-wrap">
 
 							<?php if ($field = get_field('amazon_link')): ?>
-								<a href="<?= $field ?>" class="btn-img btn-black"><img src="<?= get_stylesheet_directory_uri() ?>img/icon-3.svg" alt=""><?php _e('Buy on amazon', 'Campbell') ?></a>
+								<a href="<?= $field ?>" class="btn-img btn-black"><img src="<?= get_stylesheet_directory_uri() ?>/img/icon-3.svg" alt=""><?php _e('Buy on amazon', 'Campbell') ?></a>
 							<?php endif ?>
 
 							<?php if(have_rows('purchase_options')): ?>

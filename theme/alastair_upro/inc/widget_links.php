@@ -10,7 +10,7 @@ class Widget_Links extends WP_Widget {
     */
     function __construct() {
         parent::__construct(
-            'my_widget_links', // Base ID
+            'widget_links', // Base ID
             __('Custom links', 'Campbell'), // Name
             array( 'description' => __('Custom widget area with links', 'Campbell' ), 'classname' => 'acf-custom-widget' ) // Args
         );
@@ -30,9 +30,27 @@ class Widget_Links extends WP_Widget {
             echo $args['before_title'] . apply_filters( 'widget_title', $instance['title'] ). $args['after_title'];
         }
 
-        echo '<p class="h6">' . get_field('title', 'widget_' . $args['widget_id']) . '</p>';
+        echo '<h4 class="about_widget_title">' . get_field('title', 'widget_' . $args['widget_id']) . '</h4>';
 
+        $links = get_field('links', 'widget_' . $args['widget_id']);
 
+        if($links){ ?>
+
+            <ul class="about_widget_links">
+
+                <?php foreach ($links as $item): ?>
+
+                    <?php if ($item['link']): ?>
+                        <li>
+                            <a href="<?= $item['link']['url'] ?>" <?php if($item['link']['target']) echo ' target="_blank"' ?>><?= $item['link']['title'] ?></a>
+                        </li>
+                    <?php endif ?>
+
+                <?php endforeach ?>
+
+            </ul>
+
+        <?php }
         
 
 

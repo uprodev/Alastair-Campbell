@@ -50,3 +50,10 @@ ul.page-numbers a.prev {
     letter-spacing: 0.36px;
     text-transform: uppercase;
 }
+#reply-title small{
+    margin-left: 10px;
+}
+.top-line .top-menu ul .current-menu-item a:after {
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
+}

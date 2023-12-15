@@ -29,7 +29,8 @@ add_action('after_setup_theme', function(){
 	register_nav_menus( array(
 		'header' => 'Header menu',
 		'footer' => 'Footer menu',
-		'sidebar' => 'Sidebar menu'
+		'sidebar' => 'Left Sidebar menu',
+		'sidebar-right-1' => 'Right Sidebar menu (About)',
 	) );
 });
 
@@ -104,13 +105,40 @@ add_action('init', function(){
 add_action( 'widgets_init', 'register_my_widgets' );
 function register_my_widgets(){
 	register_sidebar( array(
-		'name' => 'Sidebar',
-		'id' => 'my-sidebar',
-		'description' => 'Sidebar',
+		'name' => 'Sidebar (About)',
+		'id' => 'about-sidebar',
+		'description' => 'Sidebar (About Page)',
 		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '',
-		'after_title' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2 class="widgettitle">',
+		'after_title'   => "</h2>\n",
+	) );
+	register_sidebar( array(
+		'name' => 'Sidebar (Contact)',
+		'id' => 'contact-sidebar',
+		'description' => 'Sidebar (Contact Page)',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2 class="widgettitle">',
+		'after_title'   => "</h2>\n",
+	) );
+	register_sidebar( array(
+		'name' => 'Sidebar (Charity)',
+		'id' => 'charity-sidebar',
+		'description' => 'Sidebar (Charity Page)',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2 class="widgettitle">',
+		'after_title'   => "</h2>\n",
+	) );
+	register_sidebar( array(
+		'name' => 'Sidebar (Post)',
+		'id' => 'post-sidebar',
+		'description' => 'Sidebar (Post)',
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2 class="widgettitle">',
+		'after_title'   => "</h2>\n",
 	) );
 }
 
@@ -121,15 +149,81 @@ include_once(get_stylesheet_directory() . '/inc/widget_links.php');
 add_action('acf/init', 'my_acf_init_block_types');
 function my_acf_init_block_types() {
 
-    if( function_exists('acf_register_block_type') ) {
+	if( function_exists('acf_register_block_type') ) {
 
-        acf_register_block_type(array(
-            'name'              => 'my_slider',
-            'title'             => __('Slider (Custom)'),
-            'description'       => __('Add Slider (Custom)'),
-            'render_template'   => 'parts/blocks/slider.php',
-            'category'          => 'common',
-            'post_types'        => array('post', 'page'),
-        ));
+		acf_register_block_type(array(
+			'name'              => 'my_slider',
+			'title'             => __('Slider (Custom)'),
+			'description'       => __('Add Slider (Custom)'),
+			'render_template'   => 'parts/blocks/slider.php',
+			'category'          => 'common',
+			'post_types'        => array('post', 'page'),
+		));
+	}
+}
+
+
+
+
+add_action( 'template_redirect', function ()
+{
+
+	if (!$_GET['run'])
+		return;
+    // Get all our posts
+	$args = [
+		'posts_per_page' => -1,
+        'fields'         => 'ids', // Make the query lean
+        // Add any additional query args here
+    ];
+    $q = new WP_Query( $args );
+
+    if ( !$q->have_posts() )
+    	return;
+
+    while ( $q->have_posts() ) {
+    	$q->the_post();
+
+        // Get all the categories attached to the post
+    	$categories = get_the_category();
+    	if ( !$categories )
+    		continue;
+
+        // Get the names from the categories into an array
+    	$names = wp_list_pluck( $categories, 'name' );
+        // Loop through the names and make sure that the post does not already has the tag attached
+    	foreach ( $names as $key=>$name ) {
+    		if ( has_tag( $name ) )
+    			unset ( $names[$key] );
+    	}
+        // Make sure we still have a valid $names array
+    	if ( !$names )
+    		continue;
+
+        // Finally, attach our tags to the posts
+    	wp_set_post_terms(
+            get_the_ID(), // Post ID
+            $names, // Array of tag names to attach
+            'post_tag',
+            true // Only add the tags, do not override
+        );
     }
+    wp_reset_postdata();
+});
+
+
+/*add_filter( 'excerpt_more', 'new_excerpt_more' );
+function new_excerpt_more( $more ){
+	global $post;
+	return '...<a href="'. get_permalink($post) . '">' . __('Continue', 'Campbell') . '<i class="far fa-long-arrow-right"></i></a>';
+}*/
+
+
+function get_excerpt($count){
+	$permalink = get_permalink($post->ID);
+	$excerpt = get_the_content();
+	$excerpt = strip_tags($excerpt);
+	$excerpt = substr($excerpt, 0, $count);
+	$excerpt = $excerpt.'...';
+	return $excerpt;
 }

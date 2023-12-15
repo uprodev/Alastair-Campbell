@@ -7,8 +7,10 @@
   <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
-  <?php wp_body_open(); ?>
+<?php $body_class = is_single() ? 'in_category-' . get_the_category(get_the_ID())[0]->term_id : '' ?>
+
+<body <?php body_class($body_class) ?>>
+  <?php wp_body_open() ?>
   <header>
     <div class="top-line">
       <div class="content-width">

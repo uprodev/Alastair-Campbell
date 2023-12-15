@@ -16,6 +16,7 @@ jQuery(document).ready(function ($) {
   var swiper4n1 = new Swiper(".slider-4n-1", {
     slidesPerView: 1.2,
     spaceBetween: 10,
+	  loop:true,
     navigation: {
       nextEl: ".next-4n-1",
       prevEl: ".prev-4n-1",
@@ -27,7 +28,7 @@ jQuery(document).ready(function ($) {
       },
       768: {
         slidesPerView: 3,
-        spaceBetween: 30,
+        spaceBetween: 20,
       },
       1350: {
         slidesPerView: 4,
@@ -40,6 +41,7 @@ jQuery(document).ready(function ($) {
   var swiper4n2 = new Swiper(".slider-4n-2", {
     slidesPerView: 1.2,
     spaceBetween: 10,
+	  loop:true,
     navigation: {
       nextEl: ".next-4n-2",
       prevEl: ".prev-4n-2",
@@ -51,7 +53,7 @@ jQuery(document).ready(function ($) {
       },
       768: {
         slidesPerView: 3,
-        spaceBetween: 30,
+        spaceBetween: 20,
       },
       1350: {
         slidesPerView: 4,
@@ -64,6 +66,7 @@ jQuery(document).ready(function ($) {
   var swiper45n = new Swiper(".slider-4-5n", {
     slidesPerView: "auto",
     spaceBetween: 10,
+	
     navigation: {
       nextEl: ".next-4-5n",
       prevEl: ".prev-4-5n",
@@ -75,7 +78,7 @@ jQuery(document).ready(function ($) {
       },
       768: {
 
-        spaceBetween: 30,
+        spaceBetween: 20,
       },
       1024: {
 
@@ -150,7 +153,7 @@ jQuery(document).ready(function ($) {
     spaceBetween: 10,
     effect: "fade",
     autoplay: {
-      delay: 30000000,
+      delay: 3000,
       disableOnInteraction: false,
     },
     navigation: {
@@ -162,4 +165,36 @@ jQuery(document).ready(function ($) {
       clickable: true,
     },
   });
+
+  $('.page-template-blog .blog-tabs .item-blog .text-event .wrap-text p:nth-child(2)').Cuttr({
+    //options here
+    licenseKey: 'EBE72281-71134D04-83AFE92D-27BD4A6F',
+    truncate: 'words',
+    ending: ' ...',
+    length: 15
+  });
+
+  $('.slider-4n-block .excerpt, .shop-tabs .wrap-text .excerpt').Cuttr({
+    //options here
+    licenseKey: 'EBE72281-71134D04-83AFE92D-27BD4A6F',
+    truncate: 'characters',
+    ending: ' ...',
+    length: 95
+  });
+
+  $('.shop-tabs .wrap .excerpt').Cuttr({
+    //options here
+    licenseKey: 'EBE72281-71134D04-83AFE92D-27BD4A6F',
+    truncate: 'characters',
+    ending: ' ...',
+    length: 115
+  });
+  $('.breadcrumb li:last-child').Cuttr({
+    //options here
+    licenseKey: 'EBE72281-71134D04-83AFE92D-27BD4A6F',
+    truncate: 'words',
+    ending: ' ...',
+    length: 5
+  });
+
 });

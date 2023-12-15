@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header() ?>
 
 <div class="bg-white ">
 
@@ -17,7 +17,7 @@
 
 							<?php foreach ($terms as $term): ?>
 								<li>
-									<p class="tag" style="<?php if($field = get_field('label', 'term_' . $term->term_id)['border']) echo 'border-color: ' . $field . ';'; if($field = get_field('label', 'term_' . $term->term_id)['background']) echo 'background-color: ' . $field . ';'; if($field = get_field('label', 'term_' . $term->term_id)['color']) echo 'color: ' . $field . ';'; ?>"><?= $term->name ?></p>
+									<p class="tag" style="<?php if($field = get_field('label', 'term_' . $term->term_id)['border']) echo 'border-color: ' . $field . ';'; if($field = get_field('label', 'term_' . $term->term_id)['background']) echo 'background-color: ' . $field . ';'; if($field = get_field('label', 'term_' . $term->term_id)['color']) echo 'color: ' . $field . ';'; ?>"><?= get_field('singular_name', 'term_' . $term->term_id) ?: $term->name ?></p>
 								</li>
 							<?php endforeach ?>
 
@@ -29,21 +29,29 @@
 						<li>
 							<p class="author-p"><?php _e('Posted by', 'Campbell') ?> <?= get_the_author_meta('display_name', get_post_field('post_author', get_the_ID())); ?></p>
 						</li>
+						<li>
+							<p class="author-p"><?= get_comment_count(get_the_ID())['approved'] . ' ' . __('comments', 'Campbell') ?></p>
+						</li>
 					</ul>
 
 					<div class="wrap">
-
-						<?php if (has_post_thumbnail()): ?>
+						
+						<?php if ($field = get_field('_video_format_urls')): ?>
+							<div class="video-block-single">
+								<?= $field ?>
+							</div>
+						<?php elseif (has_post_thumbnail() && !in_category(1291)): ?>
 							<figure>
 								<?php the_post_thumbnail('full') ?>
 							</figure>
 						<?php endif ?>
-						
+
 						<?php the_content() ?>
 
 					</div>
 				</div>
-				<?php $terms = wp_get_object_terms(get_the_ID(), 'category', 'fields=ids') ?>
+
+				<?php $terms_ids = wp_get_object_terms(get_the_ID(), 'category', 'fields=ids') ?>
 
 				<div class="aside">
 					<div class="progress-wrap">
@@ -57,11 +65,20 @@
 					</div>
 
 					<?php 
-					$wp_query = new WP_Query(array('post_type' => 'post', 'cat' => $terms, 'posts_per_page' => 4, 'post__not_in' => array(get_the_ID()), 'paged' => get_query_var('paged')));
+					$wp_query = new WP_Query(array('post_type' => 'post', 'cat' => $terms_ids, 'posts_per_page' => 4, 'post__not_in' => array(get_the_ID()), 'paged' => get_query_var('paged')));
 					if($wp_query->have_posts()): 
 						?>
 
-						<p class="h6"><?php _e('Related Articles', 'Campbell') ?></p>
+						<?php 
+						$term_name = '';
+						if($terms) {
+							foreach($terms as $term){
+								if($term->parent == 0) $term_name = $term->name;
+							}
+						}
+						?>
+
+						<p class="h6"><?= __('Recent', 'Campbell') . ' ' . $term_name ?></p>
 
 						<?php while ($wp_query->have_posts()): $wp_query->the_post(); ?>
 
@@ -89,7 +106,7 @@
 
 				</div>
 			</div>
-			
+
 			<?php comments_template() ?>
 
 		</div>

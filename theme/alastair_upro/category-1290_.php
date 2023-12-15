@@ -1,18 +1,10 @@
-<?php 
-$frontpage_id = 10850;
-$wp_query = new WP_Query(array('post_type' => 'post', 'posts_per_page'=> get_field('posts_per_page_2', $frontpage_id), 'paged' => get_query_var('paged')));
-if($wp_query->have_posts()): 
-	?>
+<?php get_header(); ?>
+
+<?php if (have_posts()): ?>
 
 	<section class="slider-4n-block">
 		<div class="content-width">
-
-			<?php if ($field = get_field('title_2', $frontpage_id)): ?>
-				<a href="<?php the_permalink(10852) ?>">
-					<h2><?= $field ?></h2>
-				</a>
-			<?php endif ?>
-
+			<h2><?php single_cat_title() ?></h2>
 			<div class="nav-wrap">
 				<div class="swiper-button-next next-4n-1"><img src="<?= get_stylesheet_directory_uri() ?>/img/arrow-r.svg" alt=""></div>
 				<div class="swiper-button-prev prev-4n-1"><img src="<?= get_stylesheet_directory_uri() ?>/img/arrow-l.svg" alt=""></div>
@@ -21,7 +13,7 @@ if($wp_query->have_posts()):
 				<div class="swiper slider-4n slider-4n-1">
 					<div class="swiper-wrapper">
 
-						<?php while ($wp_query->have_posts()): $wp_query->the_post(); ?>
+						<?php while (have_posts()) : the_post(); ?>
 
 							<div class="swiper-slide">
 								
@@ -30,14 +22,18 @@ if($wp_query->have_posts()):
 							</div>
 
 						<?php endwhile; ?>
-
+						
 					</div>
+
+					<?php get_template_part('parts/pagination') ?>
+
 				</div>
 			</div>
 		</div>
 	</section>
 
-	<?php 
-endif;
-wp_reset_query(); 
-?>
+<?php endif ?>
+
+<?php get_template_part('parts/author') ?>
+
+<?php get_footer(); ?>

@@ -43,7 +43,9 @@ if($featured_posts): ?>
 		<div class="content-width">
 
 			<?php if ($field = get_field('title_5')): ?>
-				<h2><?= $field ?></h2>
+				<a href="<?php the_permalink(10856) ?>">
+					<h2><?= $field ?></h2>
+				</a>
 			<?php endif ?>
 
 			<div class="nav-wrap">

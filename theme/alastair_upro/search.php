@@ -1,32 +1,34 @@
 <?php get_header(); ?>
 
-<section class="slider-4n-block">
+<section class="shop-tabs blog-tabs">
 	<div class="content-width">
-		<h2><?php _e('You were looking for') ?>: <?= get_search_query() ?></h2>
-		<div class="nav-wrap">
-			<div class="swiper-button-next next-4n-1"><img src="<?= get_stylesheet_directory_uri() ?>/img/arrow-r.svg" alt=""></div>
-			<div class="swiper-button-prev prev-4n-1"><img src="<?= get_stylesheet_directory_uri() ?>/img/arrow-l.svg" alt=""></div>
-		</div>
-		<div class="slider-wrap">
-			<div class="swiper slider-4n slider-4n-1">
-				<div class="swiper-wrapper">
+
+		<?php 
+		$wp_query = new WP_Query(array('post_type' => 'post', 's' => get_search_query(), 'posts_per_page' => 12, 'paged' => get_query_var('paged')));
+		if($wp_query->have_posts()): 
+			?>
+
+			<h2><?php _e('You were looking for') ?>: <?= get_search_query() ?></h2>
+
+			<div class="tab-content">
+				<div class="tab-item">
 
 					<?php while ($wp_query->have_posts()): $wp_query->the_post(); ?>
 
-						<div class="swiper-slide">
-
-							<?php get_template_part('parts/content', 'post') ?>
-
-						</div>
+						<?php get_template_part('parts/content', 'post_blog') ?>
 
 					<?php endwhile; ?>
 
 				</div>
-			</div>
-		</div>
 
-		<?php get_template_part('parts/pagination') ?>
-		
+				<?php get_template_part('parts/pagination') ?>
+				
+			</div>
+
+		<?php else: ?>
+			<h2><?php _e('Nothing found') ?></h2>
+		<?php endif ?>
+
 	</div>
 </section>
 

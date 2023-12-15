@@ -1,37 +1,32 @@
-<div class="item">
-	<h2><?= $args['term_name'] ?></h2>
-	
-	<?php 
-	$feeds = get_posts(array('post_type' => 'wprss_feed', 'posts_per_page' => -1));
+<?php 
+$podcast_cat_image = '';
+if($args['term_id'] == 1295) $podcast_cat_image = 12895;
+if($args['term_id'] == 1296) $podcast_cat_image = 13328;
 
-	foreach ($feeds as $feed) {
-		if ($feed->post_title == $args['term_name']) $image_url = get_post_meta($feed->ID, 'wprss_feed_image', true);
-	}
-
-	$feed_items = new WP_Query(array('post_type' => 'wprss_feed_item', 'meta_query' => [['key' => 'wprss_item_source_name', 'value' => $args['term_name'],]], 'posts_per_page' => 1)); 
+$last_post = new WP_Query(array('post_type' => 'post', 'cat' => $args['term_id'], 'posts_per_page' => 1));
+if ($last_post->have_posts()): 
 	?>
 
-	<?php if ($feeds && $feed_items->have_posts()): ?>
+	<div class="item">
+		<a href="<?= get_term_link($args['term_id']) ?>">
+			<h2><?= $args['term_name'] ?></h2>
+		</a>
 
-		<?php while ($feed_items->have_posts()): $feed_items->the_post(); ?>
+		<?php while ($last_post->have_posts()): $last_post->the_post(); ?>
 			<div class="iframe-wrap">
-
-				<?php if ($image_url): ?>
-					<figure>
-						<img src="<?= $image_url ?>" alt="">
-					</figure>
-				<?php endif ?>
-
+				<figure>
+					<?= wp_get_attachment_image($podcast_cat_image, 'full') ?>
+				</figure>
 				<div class="text">
 					<p class="episode_date"><?= get_the_date('j M Y') ?></p>
-					<p class="episode_title"><?= get_the_title() ?></p>
+					<a href="<?php the_permalink() ?>" class="episode_title"><?= get_the_title() ?></a>
 					<?= get_first_paragraph(get_the_content()) ?>
 				</div>
 
 				<div class="player-wrap">
 
 					<?php
-					$src = get_post_meta(get_the_ID(), 'wprss_item_audio', true);
+					$src = get_post_meta(get_the_ID(), 'wprss_item_permalink', true);
 					$src = $args['term_id'] == 1270 ? $src : explode('?', $src)[0];
 					echo wp_audio_shortcode(
 						[
@@ -46,21 +41,19 @@
 
 				</div>
 			</div>
+
 		<?php endwhile; ?>
-		<?php 
-	endif;
-	wp_reset_query(); 
-	?>
 
-	<div class="text">
+		<div class="text">
+			<?= term_description($args['term_id']) ?>
+			<div class="btn-wrap">
+				<a href="<?= get_term_link($args['term_id']) ?>" class="btn-default"><?php _e('View all episodes', 'Campbell') ?></a>
+			</div>
 
-		<?php if ($field = get_field('excerpt', 'term_' . $args['term_id'])): ?>
-			<p><?= $field ?></p>
-		<?php endif ?>
-
-		<div class="btn-wrap">
-			<a href="<?= get_term_link($args['term_id']) ?>" class="btn-default"><?php _e('View all episodes', 'Campbell') ?></a>
 		</div>
-
 	</div>
-</div>
+
+	<?php 
+endif;
+wp_reset_query(); 
+?>

@@ -23,15 +23,35 @@
 					</div>
 				</div>
 
+				<?php if (is_page(10860) || is_page(10862) || is_page(11166)): ?>
+
 				<div class="aside">
 
-					<?php if (is_active_sidebar('my-sidebar')) dynamic_sidebar('my-sidebar') ?>
+					<?php 
+					switch (get_the_ID()) {
+						case 10860:
+						if (is_active_sidebar('about-sidebar')) dynamic_sidebar('about-sidebar');
+						break;
+						case 10862:
+						if (is_active_sidebar('contact-sidebar')) dynamic_sidebar('contact-sidebar');
+						break;
+						case 11166:
+						if (is_active_sidebar('charity-sidebar')) dynamic_sidebar('charity-sidebar');
+						break;
+
+						default:
+						break;
+					}
+					?>
 
 				</div>
+				
+			<?php endif ?>
 
-			</div>
+
 		</div>
-	</section>
+	</div>
+</section>
 </div>
 
 <?php get_footer(); ?>

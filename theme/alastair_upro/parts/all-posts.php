@@ -1,20 +1,15 @@
 <?php $terms = get_terms( [
 	'taxonomy' => 'category',
 	'hide_empty' => false,
+	'parent' => 0,
+	'orderby' => 'none',
 ] ) ?>
 
 <?php if ($terms): ?>
 	<section class="shop-tabs blog-tabs">
 		<div class="content-width">
 			<div class="tabs">
-
-				<?php if (is_single()): ?>
-					<?php wp_nav_menu( array(
-						'theme_location'  => 'sidebar',
-						'container'       => '',
-						'items_wrap'      => '<ul class="tabs-menu">%3$s</ul>'
-					)); ?>
-				<?php else: ?>
+				<div>
 					<ul class="tabs-menu">
 						<li class="is-active"><a href="<?php the_permalink($args['page_id']) ?>"><?php _e('All', 'Campbell') ?></a></li>
 
@@ -25,7 +20,10 @@
 						<?php endforeach ?>
 
 					</ul>
-				<?php endif ?>
+
+					<?php if (is_active_sidebar('post-sidebar') && $args['is_tags']) dynamic_sidebar('post-sidebar') ?>
+					
+				</div>
 
 				<?php 
 				$wp_query = new WP_Query(array('post_type' => 'post', 
@@ -40,7 +38,7 @@
 
 							<?php while ($wp_query->have_posts()): $wp_query->the_post(); ?>
 
-								<?php get_template_part('parts/content', 'post_blog', ['counter' => $wp_query->current_post]) ?>
+								<?php get_template_part('parts/content', 'post_blog', ['counter' => $wp_query->current_post, 'is_blog' => true]) ?>
 
 								<?php 
 							endwhile;

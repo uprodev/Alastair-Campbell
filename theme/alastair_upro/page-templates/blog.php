@@ -9,6 +9,13 @@ Template Name: Blog
 <?php $page_id = get_queried_object_id() ?>
 
 <?php if ($post = get_field('post_1', $page_id)): ?>
+
+	<?php 
+	$article_cat_id = 1291;
+	$in_article_cat = in_category($article_cat_id, $post->ID);
+	$wprss_item_permalink = get_post_meta($post->ID, 'wprss_item_permalink')[0];
+	?>
+
 	<div class="bg-white">
 		<section class="blog-banner">
 			<div class="content-width">
@@ -24,7 +31,7 @@ Template Name: Blog
 
 						<?php if (has_post_thumbnail($post->ID)): ?>
 							<figure>
-								<a href="<?php the_permalink($post->ID) ?>">
+								<a href="<?= $in_article_cat ? $wprss_item_permalink : get_the_permalink($post->ID) ?>"<?php if($in_article_cat) echo ' target="_blank"' ?>>
 									<?= get_the_post_thumbnail($post->ID, 'full') ?>
 								</a>
 							</figure>
@@ -32,7 +39,7 @@ Template Name: Blog
 
 						<div class="text">
 							<h1>
-								<a href="<?php the_permalink($post->ID) ?>"><?= get_the_title($post->ID) ?></a>
+								<a href="<?= $in_article_cat ? $wprss_item_permalink : get_the_permalink($post->ID) ?>"<?php if($in_article_cat) echo ' target="_blank"' ?>><?= get_the_title($post->ID) ?></a>
 							</h1>
 							<ul>
 
@@ -42,7 +49,7 @@ Template Name: Blog
 
 									<?php foreach ($terms as $term): ?>
 										<li>
-											<p class="tag" style="<?php if($field = get_field('label', 'term_' . $term->term_id)['border']) echo 'border-color: ' . $field . ';'; if($field = get_field('label', 'term_' . $term->term_id)['background']) echo 'background-color: ' . $field . ';'; if($field = get_field('label', 'term_' . $term->term_id)['color']) echo 'color: ' . $field . ';'; ?>"><a href="<?= get_term_link($term->term_id) ?>"><?= $term->name ?></a></p>
+											<p class="tag" style="<?php if($field = get_field('label', 'term_' . $term->term_id)['border']) echo 'border-color: ' . $field . ';'; if($field = get_field('label', 'term_' . $term->term_id)['background']) echo 'background-color: ' . $field . ';'; if($field = get_field('label', 'term_' . $term->term_id)['color']) echo 'color: ' . $field . ';'; ?>"><a href="<?= get_term_link($term->term_id) ?>"><?= get_field('singular_name', 'term_' . $term->term_id) ?: $term->name ?></a></p>
 										</li>
 									<?php endforeach ?>
 

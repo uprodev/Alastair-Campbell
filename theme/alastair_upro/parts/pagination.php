@@ -15,14 +15,5 @@
 	);
 	the_posts_pagination($args);
 	?>
-					<!-- <ul class="pagination">
-						<li class="arrow arrow-left"><a href="#"><img src="img/arrow-l.svg" alt=""></a></li>
-						<li><p>1</p></li>
-						<li><a href="#">2</a></li>
-						<li><a href="#">3</a></li>
-						<li><a href="#">4</a></li>
-						<li><a href="#">5</a></li>
-						<li><a href="#">..</a></li>
-						<li class="arrow arrow-right"><a href="#"><img src="img/arrow-r.svg" alt=""></a></li>
-					</ul> -->
-				</div>
+	
+</div>
