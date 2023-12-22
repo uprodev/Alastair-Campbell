@@ -17,6 +17,11 @@ jQuery(document).ready(function ($) {
     slidesPerView: 1.2,
     spaceBetween: 10,
 	  loop:true,
+	 autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
     navigation: {
       nextEl: ".next-4n-1",
       prevEl: ".prev-4n-1",
@@ -41,7 +46,12 @@ jQuery(document).ready(function ($) {
   var swiper4n2 = new Swiper(".slider-4n-2", {
     slidesPerView: 1.2,
     spaceBetween: 10,
-	  loop:true,
+	 loop:true,
+	 autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
     navigation: {
       nextEl: ".next-4n-2",
       prevEl: ".prev-4n-2",
@@ -66,7 +76,11 @@ jQuery(document).ready(function ($) {
   var swiper45n = new Swiper(".slider-4-5n", {
     slidesPerView: "auto",
     spaceBetween: 10,
-	
+	autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+      pauseOnMouseEnter: true,
+    },
     navigation: {
       nextEl: ".next-4-5n",
       prevEl: ".prev-4-5n",
@@ -196,5 +210,16 @@ jQuery(document).ready(function ($) {
     ending: ' ...',
     length: 5
   });
+	
+	
+		//Изменение ширины и высоты
+	function myfun() {
+		if(window.innerWidth >992){
+			   $.fancybox.close();
+		}
+	};
+
+	$( window ).resize(myfun);
+	$( document ).ready(myfun);
 
 });

@@ -26,10 +26,13 @@
 				</div>
 
 				<?php 
-				$wp_query = new WP_Query(array('post_type' => 'post', 
+				$args_query = array(
+					'post_type' => 'post', 
 					'posts_per_page' => 8, 
 					'paged' => get_query_var('paged'),
-				));
+				);
+				if($args['featured_post_id']) $args_query['post__not_in'] = array($args['featured_post_id']);
+				$wp_query = new WP_Query($args_query);
 				if($wp_query->have_posts()): 
 					?>
 

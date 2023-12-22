@@ -101,7 +101,7 @@ input, textarea, button {
 /*-------------------------------HOME-PAGE---------------------------------*/
 .footer-menu ul li a:after{
 	position: absolute;
-    bottom: -15px;
+    bottom: -5px;
     left: 0;
     width: 100%;
     content: '';
@@ -379,7 +379,7 @@ header {
     line-height: 125%;
     letter-spacing: -0.45px;
     text-transform: capitalize;
-    font-family: "FAM Aime TRIAL", sans-serif;
+    font-family: "FAM Aime TRIAL", serif;
     color: #fff;
     margin: 0; }
 
@@ -394,7 +394,7 @@ header {
   position: absolute;
   top: 0;
   right: 0;
-  width: 135px;
+  width: 180px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -406,7 +406,7 @@ header {
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse; }
   .nav-wrap > div {
-    width: 50px;
+    width: 75px;
     -webkit-transition: all .4s ease;
     transition: all .4s ease;
     position: relative;
@@ -434,7 +434,7 @@ header {
 
 h2 {
   color: #141414;
-  font-family: "FAM Aime TRIAL", sans-serif;
+  font-family: "FAM Aime TRIAL", serif;
   font-size: 30px;
   font-style: normal;
   font-weight: 400;
@@ -489,13 +489,14 @@ h2 {
   background: rgba(90, 41, 63, 0.2);
   text-align: center;
   height: 26px;
-  line-height: 24px;
+  line-height: 24px!important;
   color: var(5A293F, #5A293F);
   font-size: 10px;
   font-style: normal;
   font-weight: 500;
   letter-spacing: 0.3px;
   text-transform: uppercase;
+	padding-top: 2px;
   padding: 0 10px; }
 
 .btn-color.blue {
@@ -526,7 +527,7 @@ h2 {
           justify-content: center; }
 .follow .title {
   color: #FFF;
-  font-family: "FAM Aime TRIAL", sans-serif;
+  font-family: "FAM Aime TRIAL", serif;
   font-size: 24px;
   font-style: normal;
   font-weight: 400;
@@ -790,7 +791,7 @@ footer {
       padding: 20px; }
       .follow-50 .item-follow .wrap .title {
         color: #FFF;
-        font-family: "FAM Aime TRIAL", sans-serif;
+        font-family: "FAM Aime TRIAL", serif;
         font-size: 24px;
         font-style: normal;
         font-weight: 400;
@@ -861,7 +862,7 @@ footer {
     width: 31%; }
   .title-img-text h1 {
     color: #141414;
-    font-family: "FAM Aime TRIAL", sans-serif;
+    font-family: "FAM Aime TRIAL", serif;
     font-size: 32.762px;
     font-style: normal;
     font-weight: 400;
@@ -951,7 +952,7 @@ footer {
 
 .h3 {
   color: #343434;
-  font-family: "FAM Aime TRIAL", sans-serif;
+  font-family: "FAM Aime TRIAL", serif;
   font-size: 27px;
   font-style: normal;
   font-weight: 400;
@@ -1090,7 +1091,7 @@ footer {
     width: 31%; }
   .title-img-buy h1 {
     color: #343434;
-    font-family: "FAM Aime TRIAL", sans-serif;
+    font-family: "FAM Aime TRIAL", serif;
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
@@ -1155,7 +1156,7 @@ footer {
       margin-bottom: 1px;
       cursor: pointer;
       color: #B1B1B1;
-      font-family: "FAM Aime TRIAL", sans-serif;
+      font-family: "FAM Aime TRIAL", serif;
       font-size: 27px;
       font-style: normal;
       font-weight: 400;
@@ -1163,7 +1164,7 @@ footer {
       text-transform: capitalize; }
       .shop-tabs .tabs-menu li a {
         color: #B1B1B1;
-        font-family: "FAM Aime TRIAL", sans-serif;
+        font-family: "FAM Aime TRIAL", serif;
         font-size: 27px;
         font-style: normal;
         font-weight: 400;
@@ -1315,7 +1316,7 @@ footer {
       margin-bottom: 12px; }
   .info-text h1 {
     color: #343434;
-    font-family: "FAM Aime TRIAL", sans-serif;
+    font-family: "FAM Aime TRIAL", serif;
     font-size: 49px;
     font-style: normal;
     font-weight: 400;
@@ -1343,7 +1344,7 @@ footer {
     padding-top: 43px;
     border-top: 1px solid #343434;
     color: #343434;
-    font-family: "FAM Aime TRIAL", sans-serif;
+    font-family: "FAM Aime TRIAL", serif;
     font-size: 21px;
     font-style: italic;
     font-weight: 400;
@@ -1416,7 +1417,7 @@ footer {
     margin-top: -55px; }
   .blog-banner h1 {
     color: #343434;
-    font-family: "FAM Aime TRIAL", sans-serif;
+    font-family: "FAM Aime TRIAL", serif;
     font-size: 40px;
     font-style: normal;
     font-weight: 400;
@@ -1616,7 +1617,7 @@ footer {
   padding: 12px 0 0; }
   .default-page h1 {
     color: #343434;
-    font-family: "FAM Aime TRIAL", sans-serif;
+    font-family: "FAM Aime TRIAL", serif;
     font-size: 49px;
     font-style: normal;
     font-weight: 400;
@@ -1687,7 +1688,7 @@ footer {
   .default-page .wrap blockquote {
     margin: 37px 50px 37px;
     color: #343434;
-    font-family: "FAM Aime TRIAL", sans-serif;
+    font-family: "FAM Aime TRIAL", serif;
     font-size: 23px;
     font-style: italic;
     font-weight: 400;
@@ -2683,7 +2684,11 @@ body.category-1295 li.menu-item-11839 a:after, body.category-1296 li.menu-item-1
 }
 
 .wp-block-heading{
-	margin-bottom: 5px;
+	margin-bottom: 20px;
+	font-family: "FAM Aime TRIAL", serif;
+	font-size: 26px!important;
+	line-height: normal!important;
+	font-weight: 500!important;
 }
 
 .excerpt{
@@ -2724,6 +2729,139 @@ body.category-1295 .footer-menu ul li.menu-item-11861 a:after, body.category-129
 	position: relative;
 	top: 25px;
 	left: 10px;
+}
+
+.blog-banner .text .date-block {
+  background: #F5F5F5;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 83px;
+  height: 81px;
+  position: absolute;
+  top: 90px;
+  left: -135px; }
+  .blog-banner .text .date-block p {
+    color: #5A293F;
+    text-align: center;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.05px;
+    text-transform: uppercase; }
+  .blog-banner .text .date-block .big {
+    color: #5A293F;
+    text-align: center;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+    margin-bottom: -4px; }
+
+.widgettitle{
+	text-transform:inherit!important;
+}
+
+.default-page .aside h2{
+	background: #5A293F;
+}
+
+.default-page .aside .wp-block-quote{
+	border-color: #5A293F;
+}
+
+.default-page .aside .wp-block-quote:before{
+	background: #5A293F;
+}
+.default-page .aside .wp-block-quote cite{
+	border-bottom: none;
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+.player-wrap{
+	margin-bottom: 30px;
+}
+
+.default-page .info li p.author-p span{
+	margin-left: 5px;
+}
+
+.menu-responsive .mob-menu > ul > li a{
+	display: inline-block;
+	position: relative;
+}
+
+.menu-responsive .mob-menu > ul > li a:after{
+	position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 100%;
+    content: '';
+    height: 1px;
+    background: #fff;
+    -webkit-transition: all .4s ease;
+    transition: all .4s ease;
+    opacity: 0;
+}
+
+.menu-responsive .mob-menu > ul > .current-menu-item a:after{
+	opacity:1;
+}
+
+.in_category-1 .menu-responsive .mob-menu > ul > li.menu-item-11873 a:after{
+	opacity:1;
+}
+
+.in_category-1292 .menu-responsive .mob-menu > ul > li.menu-item-11839 a:after{
+	opacity:1;
+}
+
+.in_category-1290 .menu-responsive .mob-menu > ul > li.menu-item-11842 a:after{
+	opacity:1;
+}
+.in_category- .menu-responsive .mob-menu > ul > li.menu-item-10868 a:after{
+	opacity:1;
+}
+
+
+.single-book .menu-responsive .mob-menu > ul .menu-item-10874 a:after {
+   opacity:1;
+}
+
+body.category-1295 .menu-responsive .mob-menu > ul > li.menu-item-11861  a:after, body.category-1296  .menu-responsive .mob-menu > ul > li.menu-item-11861 a:after {
+   opacity:1;
+}
+.blog-tabs .item-blog .text .bottom p.tag{
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-width: 52px;
+}
+.blog-tabs .item-blog .text .bottom p.tag a{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 2px 10px 0;
+}
+
+@media (min-width: 992px){
+	.menu-responsive{
+		display: none!important;
+	}
 }
 /*----------------------------END-PAGE-POST-------------------------------*/
 

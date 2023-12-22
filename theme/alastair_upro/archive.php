@@ -3,12 +3,20 @@
 <?php 
 $page_id = 10852;
 $current_term = get_queried_object();
+
+$article_cat_id = 1291;
+$event_cat_id = 1290;
+$podcast_cat_id = 1292;
+$leading_cat_id = 1295;
+$politics_cat_id = 1296;
+$in_article_cat = in_category($article_cat_id, $featured_post->ID);
+
 $sticky_posts = get_posts(['post__in' => get_option('sticky_posts'), is_tag() ? 'tag_id' : 'cat' => $current_term->term_id, 'posts_per_page' => 1]); 
 $featured_post = $sticky_posts[0] ?: get_posts(['cat' => $current_term->term_id, 'posts_per_page' => 1])[0];
 
 $podcast_cat_image = '';
-if(in_category(1295, $featured_post->ID)) $podcast_cat_image = 12895;
-if(in_category(1296, $featured_post->ID)) $podcast_cat_image = 13328;
+if(in_category($leading_cat_id, $featured_post->ID)) $podcast_cat_image = 12895;
+if(in_category($politics_cat_id, $featured_post->ID)) $podcast_cat_image = 13328;
 ?>
 
 <?php if ($featured_post): ?>
@@ -16,14 +24,14 @@ if(in_category(1296, $featured_post->ID)) $podcast_cat_image = 13328;
 
 		<?php get_template_part('parts/breadcrumbs') ?>
 
-		<?php if ($current_term->parent == 1292): ?>
+		<?php if ($current_term->parent == $podcast_cat_id): ?>
 			<section class="title-img-text">
 				<div class="content-width">
 					<div class="title-wrap">
 						<h1><?= $current_term->name ?></h1>
 					</div>
 					<figure>
-						<?= in_category(1295, $featured_post->ID) || in_category(1296, $featured_post->ID) ? wp_get_attachment_image($podcast_cat_image, 'full') : get_the_post_thumbnail($featured_post->ID, 'full') ?>
+						<?= in_category($leading_cat_id, $featured_post->ID) || in_category($politics_cat_id, $featured_post->ID) ? wp_get_attachment_image($podcast_cat_image, 'full') : get_the_post_thumbnail($featured_post->ID, 'full') ?>
 					</figure>
 					<div class="text">
 
@@ -40,13 +48,9 @@ if(in_category(1296, $featured_post->ID)) $podcast_cat_image = 13328;
 			</section>
 		<?php else: ?>
 
-			<?php 
-			$article_cat_id = 1291;
-			$in_article_cat = in_category($article_cat_id, $featured_post->ID);
-			$wprss_item_permalink = get_post_meta($featured_post->ID, 'wprss_item_permalink')[0];
-			?>
+			<?php $wprss_item_permalink = get_post_meta($featured_post->ID, 'wprss_item_permalink')[0] ?>
 
-			<section class="blog-banner<?php if($current_term->parent == 1292) echo ' podcast_subcategory' ?>">
+			<section class="blog-banner<?php if($current_term->parent == $podcast_cat_id) echo ' podcast_subcategory' ?>">
 				<div class="content-width">
 					<div class="content">
 						<div class="title">
@@ -68,7 +72,7 @@ if(in_category(1296, $featured_post->ID)) $podcast_cat_image = 13328;
 
 							<div class="text">
 
-								<?php if ($current_term->term_id == 1290): ?>
+								<?php if ($current_term->term_id == $event_cat_id): ?>
 									<div class="date-block">
 										<p class="big"><?= get_the_date('j') ?></p>
 										<p><?= get_the_date('M Y') ?></p>
@@ -103,7 +107,7 @@ if(in_category(1296, $featured_post->ID)) $podcast_cat_image = 13328;
 
 									<?php endif ?>
 
-									<?php if ($current_term->term_id != 1290): ?>
+									<?php if ($current_term->term_id != $event_cat_id): ?>
 										<li>
 											<p class="date"><?= get_the_date('j F Y', $featured_post->ID) ?></p>
 										</li>
@@ -124,7 +128,7 @@ if(in_category(1296, $featured_post->ID)) $podcast_cat_image = 13328;
 <?php endif ?>
 
 <?php 
-$parent_term = $current_term->parent == 1292 ? 1292 : 0;
+$parent_term = $current_term->parent == $podcast_cat_id ? $podcast_cat_id : 0;
 $terms = get_terms( [
 	'taxonomy' => 'category',
 	'hide_empty' => false,
@@ -163,7 +167,7 @@ $terms = get_terms( [
 					'posts_per_page' => 8,
 					'paged' => get_query_var('paged')
 				);
-				if($parent_term != 1292) $args['post__not_in'] = [$featured_post->ID];
+				if($parent_term != $podcast_cat_id) $args['post__not_in'] = [$featured_post->ID];
 				$wp_query = new WP_Query($args);
 				if($wp_query->have_posts()): 
 					?>
@@ -173,22 +177,22 @@ $terms = get_terms( [
 
 							<?php while ($wp_query->have_posts()): $wp_query->the_post(); ?>
 
-							<?php get_template_part('parts/content', 'post_blog', ['current_term' => $current_term]) ?>
+								<?php get_template_part('parts/content', 'post_blog', ['current_term' => $current_term]) ?>
 
-						<?php endwhile; ?>
+							<?php endwhile; ?>
 
-						<?php get_template_part('parts/pagination') ?>
+							<?php get_template_part('parts/pagination') ?>
 
+						</div>
 					</div>
-				</div>
 
-			<?php endif ?>
+				<?php endif ?>
 
+			</div>
 		</div>
-	</div>
-</section>
+	</section>
 
-<?php 
+	<?php 
 endif;
 wp_reset_query(); 
 ?>

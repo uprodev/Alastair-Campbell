@@ -1,7 +1,17 @@
 <?php 
 $podcast_cat_image = '';
-if($args['term_id'] == 1295) $podcast_cat_image = 12895;
-if($args['term_id'] == 1296) $podcast_cat_image = 13328;
+switch ($args['term_id']) {
+	case 1295:
+		$podcast_cat_image = 12895;
+		break;
+	case 1296:
+		$podcast_cat_image = 13328;
+		break;
+	
+	default:
+		$podcast_cat_image = '';
+		break;
+}
 
 $last_post = new WP_Query(array('post_type' => 'post', 'cat' => $args['term_id'], 'posts_per_page' => 1));
 if ($last_post->have_posts()): 
