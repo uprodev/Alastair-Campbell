@@ -24,6 +24,7 @@ if(in_category(1296)) $podcast_cat_image = 7721;
 	<p class="h6">
 		<a href="<?= $in_article_cat ? $wprss_item_permalink : get_the_permalink() ?>"<?php if($in_article_cat) echo ' target="_blank"' ?>><?php the_title() ?></a>
 	</p>
+	
 	<?php if (get_the_excerpt()): ?>
 		<span class="excerpt">
 			<?= get_excerpt(200) ?>

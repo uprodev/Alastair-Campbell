@@ -26,6 +26,13 @@ ul.page-numbers a.next {
 ul.page-numbers a.prev {
     margin-right: 35px;
 }
+
+.blog-banner .text .excerpt + a{
+	font-size: 0;
+}
+.blog-banner .text .excerpt + a i{
+	font-size: 16px;
+}
 .pagination li span.current {
     display: -webkit-box;
     display: -ms-flexbox;

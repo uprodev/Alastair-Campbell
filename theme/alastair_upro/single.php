@@ -51,6 +51,12 @@
 						</figure>
 					<?php endif ?>
 
+					<?php if (!has_post_thumbnail() && in_category(1295)): ?>
+						<figure>
+							<?= wp_get_attachment_image(12895, 'full') ?>
+						</figure>
+					<?php endif ?>
+
 					<?php if ($src = get_post_meta(get_the_ID(), 'wprss_item_permalink', true)): ?>
 						<div class="player-wrap">
 

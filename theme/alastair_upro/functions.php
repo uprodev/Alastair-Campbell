@@ -219,9 +219,10 @@ function new_excerpt_more( $more ){
 }*/
 
 
-function get_excerpt($count){
-	$permalink = get_permalink($post->ID);
-	$excerpt = get_the_content();
+function get_excerpt($count, $post_id=''){
+	$post_id_ = $post_id ?: $post->ID;
+	$permalink = get_permalink($post_id_);
+	$excerpt = get_the_content(null, null, $post_id_);
 	$excerpt = strip_tags($excerpt);
 	$excerpt = substr($excerpt, 0, $count);
 	$excerpt = $excerpt.'...';

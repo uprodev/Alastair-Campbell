@@ -450,12 +450,12 @@ h2 {
     position: absolute;
     left: 0;
     bottom: 0; }
-  .slider-4n .swiper-slide figure {
+  .slider-4n .swiper-slide figure, .slider-4n .swiper-slide .video-block {
     width: 100%;
     height: 185px;
     overflow: hidden;
     margin-bottom: 26px; }
-    .slider-4n .swiper-slide figure img {
+    .slider-4n .swiper-slide figure img, .slider-4n .swiper-slide .video-block iframe {
       width: 100%;
       height: 100%;
       -o-object-fit: cover;

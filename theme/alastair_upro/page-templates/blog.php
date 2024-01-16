@@ -50,39 +50,55 @@ $wprss_item_permalink = get_post_meta($post->ID, 'wprss_item_permalink')[0];
 						<h1>
 							<a href="<?= $in_article_cat ? $wprss_item_permalink : get_the_permalink($post->ID) ?>"<?php if($in_article_cat) echo ' target="_blank"' ?>><?= get_the_title($post->ID) ?></a>
 						</h1>
-						<ul>
 
-							<?php $terms = wp_get_object_terms($post->ID, 'category') ?>
+						<?php if (get_the_excerpt($post->ID)): ?>
+							<span class="excerpt">
+								<?= get_excerpt(200, $post->ID) ?>
+							</span>
+							<a href="<?= $in_article_cat ? $wprss_item_permalink : get_the_permalink() ?>"<?php if($in_article_cat) echo ' target="_blank"' ?>><?php _e('Continue', 'Campbell') ?>
 
-							<?php if ($terms): ?>
-
-								<?php foreach ($terms as $term): ?>
-
-									<?php if ($term->parent == 0): ?>
-										<li>
-											<p class="tag" style="<?php if($field = get_field('label', 'term_' . $term->term_id)['border']) echo 'border-color: ' . $field . ';'; if($field = get_field('label', 'term_' . $term->term_id)['background']) echo 'background-color: ' . $field . ';'; if($field = get_field('label', 'term_' . $term->term_id)['color']) echo 'color: ' . $field . ';'; ?>"><a href="<?= get_term_link($term->term_id) ?>"><?= get_field('singular_name', 'term_' . $term->term_id) ?: $term->name ?></a></p>
-										</li>
-									<?php endif ?>
-
-								<?php endforeach ?>
-
+							<?php if (in_category($article_cat_id, get_the_ID())): ?>
+								<img src="<?= get_stylesheet_directory_uri() ?>/img/web-1.svg" alt="">
+							<?php else: ?>
+								<i class="far fa-long-arrow-right"></i></a>
 							<?php endif ?>
 
-									<?php if (!in_category($event_cat_id, $post->ID)): ?>
-										<li>
-											<p class="date"><?= get_the_date('j F Y', $featured_post->ID) ?></p>
-										</li>
-									<?php endif ?>
+						</a>
+					<?php endif ?>
 
+					<ul>
+
+						<?php $terms = wp_get_object_terms($post->ID, 'category') ?>
+
+						<?php if ($terms): ?>
+
+							<?php foreach ($terms as $term): ?>
+
+								<?php if ($term->parent == 0): ?>
+									<li>
+										<p class="tag" style="<?php if($field = get_field('label', 'term_' . $term->term_id)['border']) echo 'border-color: ' . $field . ';'; if($field = get_field('label', 'term_' . $term->term_id)['background']) echo 'background-color: ' . $field . ';'; if($field = get_field('label', 'term_' . $term->term_id)['color']) echo 'color: ' . $field . ';'; ?>"><a href="<?= get_term_link($term->term_id) ?>"><?= get_field('singular_name', 'term_' . $term->term_id) ?: $term->name ?></a></p>
+									</li>
+								<?php endif ?>
+
+							<?php endforeach ?>
+
+						<?php endif ?>
+
+						<?php if (!in_category($event_cat_id, $post->ID)): ?>
 							<li>
-								<p><?= __('Posted by', 'Campbell') . ' ' ?><a href="<?= get_author_posts_url(get_post_field('post_author', $post->ID)) ?>"><?= get_the_author_meta('display_name', get_post_field('post_author', $post->ID)); ?></a></p>
+								<p class="date"><?= get_the_date('j F Y', $featured_post->ID) ?></p>
 							</li>
-						</ul>
-					</div>
+						<?php endif ?>
+
+						<li>
+							<p><?= __('Posted by', 'Campbell') . ' ' ?><a href="<?= get_author_posts_url(get_post_field('post_author', $post->ID)) ?>"><?= get_the_author_meta('display_name', get_post_field('post_author', $post->ID)); ?></a></p>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
-	</section>
+	</div>
+</section>
 </div>
 <?php endif ?>
 

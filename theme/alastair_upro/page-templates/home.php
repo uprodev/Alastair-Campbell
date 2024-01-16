@@ -35,9 +35,15 @@ Template Name: Home
 
 <?php get_template_part('parts/podcast_categories') ?>
 
-<?php
-$featured_posts = get_field('items_5');
-if($featured_posts): ?>
+<?php 
+$args = array(
+    'post_type' => 'book', 
+    'posts_per_page' => -1, 
+    'paged' => get_query_var('paged')
+);
+$wp_query = new WP_Query($args);
+if($wp_query->have_posts()): 
+    ?>
 
 	<section class="slider-4n-block slider-4-5n-block">
 		<div class="content-width">
@@ -56,18 +62,15 @@ if($featured_posts): ?>
 				<div class="swiper slider-4-5n">
 					<div class="swiper-wrapper">
 
-						<?php foreach($featured_posts as $post): 
+						<?php while ($wp_query->have_posts()): $wp_query->the_post(); ?>
 
-							global $post;
-							setup_postdata($post); ?>
 							<div class="swiper-slide">
 
 								<?php get_template_part('parts/content', 'book') ?>
 
 							</div>
-						<?php endforeach; ?>
-
-						<?php wp_reset_postdata(); ?>
+							
+						<?php endwhile; ?>
 
 					</div>
 				</div>
@@ -82,7 +85,10 @@ if($featured_posts): ?>
 		</div>
 	</section>
 
-<?php endif; ?>
+<?php 
+endif;
+wp_reset_query(); 
+?>
 
 <div class="line">
 	<div class="content-width"></div>
